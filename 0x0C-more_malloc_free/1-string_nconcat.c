@@ -9,35 +9,41 @@
   *@n: number to limit string 2
   *Return: A string on suscess
   */
-
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	char *TotalString;
-	unsigned int i;
-	unsigned int j;
-	unsigned int len1;
-	unsigned int len2;
-
-	len1 = strlen(s1);
-	len2 = strlen(s2);
-TotalString = malloc(sizeof(char) * (len1 + len2));
+char *s;
+unsigned int tot1 = 0, tot2 = 0, k;
 
 if (s1 == NULL)
-	s1 = "";
+s1 = "";
+
 if (s2 == NULL)
-	s2 = "";
-if (len2 > n)
-	len2 = n;
-if (TotalString == NULL)
-	return (NULL);
-for (i = 0; i < len1; i++)
+s2 = "";
+
+while (s1[tot1] != '\0')
 {
-	TotalString[i] = s1[i];
+tot1++;
 }
-for (j = 0; j < len2; j++, i++)
+
+while (s2[tot2] != '\0')
 {
-	TotalString[i] = s2[j];
+tot2++;
 }
-TotalString[len1 + len2] = '\0';
-return (TotalString);
+
+if (n > tot2)
+n = tot2;
+s = malloc((tot1 + n + 1) * sizeof(char));
+
+if (s == NULL)
+return (0);
+for (k = 0; k < tot1; k++)
+{
+s[k] = s1[k];
+}
+for (; k < (tot1 + n); k++)
+{
+s[k] = s2[k - tot1];
+}
+s[k] = '\0';
+return (s);
 }
