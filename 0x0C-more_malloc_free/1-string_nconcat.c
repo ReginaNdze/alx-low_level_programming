@@ -25,7 +25,18 @@ if (s1 == NULL)
 	s1 = "";
 if (s2 == NULL)
 	s2 = "";
-if (n <= len2)
+/*while (s1[i] != '\0')
+*{
+*	len1++;
+*	i++;
+*}
+*while (s2[j] !='\0')
+*{
+*	len2++;
+*	j++;
+}
+*/
+if (len2 > n)
 	len2 = n;
 if (TotalString == NULL)
 	return (NULL);
@@ -40,18 +51,3 @@ for (j = 0; j < len2; j++, i++)
 TotalString[len1 + len2] = '\0';
 return (TotalString);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
