@@ -6,6 +6,7 @@
   *string_nconcat - concatinates two strings
   *@s1: first stting to concat
   *@s2: second string to concat
+  *@n: number to limit string 2
   *Return: A string on suscess
   */
 
@@ -25,17 +26,6 @@ if (s1 == NULL)
 	s1 = "";
 if (s2 == NULL)
 	s2 = "";
-/*while (s1[i] != '\0')
-*{
-*	len1++;
-*	i++;
-*}
-*while (s2[j] !='\0')
-*{
-*	len2++;
-*	j++;
-}
-*/
 if (len2 > n)
 	len2 = n;
 if (TotalString == NULL)
