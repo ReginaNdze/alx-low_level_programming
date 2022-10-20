@@ -1,4 +1,4 @@
-#include "main.h"
+#include "lists.h"
 
 void print_something(void) __attribute__ ((constructor));
 
